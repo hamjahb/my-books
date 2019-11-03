@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
+import parser from 'xml-js';
 // import {} from 'react-xml-parser';
 
 class App extends Component {
@@ -24,20 +25,24 @@ class App extends Component {
 
 
     fetch(url)
-      .then((resp) =>{
+      .then((resp) => {
         resp
-        .text()
-        .then( str => {
-          let responseDoc = new DOMParser().parseFromString(str, 'application/xml');
-          console.log(responseDoc);
-        })
+          .text()
+          .then(str => {
+            let json = parser.xml2js(str, {
+              compact: true,
+              ignoreDoctype: true,
+              attributesKey: "attributes"
+            });           
+             console.log(json);
+          })
       })
-      
+
       .catch((error) => {
         console.log(error)
       })
 
-    }
+  }
 
   render() {
     return (
