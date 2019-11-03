@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import axios from 'axios';
 import parser from 'xml-js';
-// import {} from 'react-xml-parser';
 
 class App extends Component {
   constructor(props) {
@@ -11,31 +9,47 @@ class App extends Component {
     this.state = {
       favorites: [],
       collection: [],
-
+      search:[]
     }
   }
 
+
+
   getRequest = () => {
-    const authorId = '1077326';
+    // const authorId = '1077326';
     const key = 'AiY0kCwWYFSK3RilpXntbQ';
+    const query = 'hobbit'
+    const page = '';
+    const search = 'all'
 
-    const url = `https://cors-anywhere.herokuapp.com/https://www.goodreads.com/author/list.xml?key=${key}&id=${authorId}&page=`;
 
-    console.log(url);
+    const url =  `https://cors-anywhere.herokuapp.com/https://www.goodreads.com/search/index.xml?q=${query}&page${page}&key=${key}&search=${search}`
 
 
+    // console.log(url);
+
+    
     fetch(url)
       .then((resp) => {
-        resp
-          .text()
+        resp.text()
           .then(str => {
-            let json = parser.xml2js(str, {
-              compact: true,
-              ignoreDoctype: true,
-              attributesKey: "attributes"
-            });           
-             console.log(json);
-          })
+
+          // turns response from XML to json
+          let json = parser.xml2js(str, {
+            compact: true,
+            ignoreDoctype: true,
+            attributesKey: "attributes"
+          });      
+          
+          // book search queery location 
+          const querryResult = json.GoodreadsResponse.search.results.work;
+          // console.log(json.GoodreadsResponse.search.results.work)
+          
+          const bookContents = querryResult.map((item, index) => {
+            console.log(item.best_book.title._text)
+            
+          })          
+        })
       })
 
       .catch((error) => {
@@ -43,6 +57,9 @@ class App extends Component {
       })
 
   }
+
+
+
 
   render() {
     return (
@@ -55,8 +72,8 @@ class App extends Component {
         </header> */}
 
         {/* <body> */}
-        <h2>body things to be here</h2>
-        {this.getRequest()}
+          <h2>body things to be here</h2>
+          {this.getRequest()}
 
         {/* </body> */}
       </div>
