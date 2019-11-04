@@ -13,7 +13,7 @@ class BookCards extends Component {
     }
 
     faveClick = (e) => {
-        console.log(`${this.props.search[0]} was clicked`);
+        console.log(`${this.props.search} was clicked`);
         
         
     }

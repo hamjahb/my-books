@@ -6,7 +6,7 @@
         |                       BookCards.js
         |                           |
         |                           |
-        |                           Card
+        |                          Card
         |
         |
     favorites
