@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import parser from 'xml-js';
+import BookCards from './Pages/BookCards';
 
 class App extends Component {
   constructor(props) {
@@ -76,21 +77,29 @@ class App extends Component {
 
     return (
       <div className="App">
-        {/* <header>
+        <header>
           <nav>
-            <collection>Collections filter</collection>
-            <favorites> Favorites filter</favorites>
+            <collection>| Collections filter | </collection>
+            <favorites>| Favorites filter | </favorites>
           </nav>
-        </header> */}
+        </header>
 
-        {/* <body> */}
+        <body>
           <h2>body things to be here</h2>
           <ul>
             {bookRender}
+            <BookCards/>
           </ul>
 
-        {/* </body> */}
+        </body>
+
+
+        <footer>
+          <h2>dis be footer</h2>
+        </footer>
       </div>
+
+
     );
   }
 }
