@@ -15,16 +15,14 @@ class App extends Component {
   }
 
   
-
-
   componentDidMount() {
     const key = 'AiY0kCwWYFSK3RilpXntbQ';
     const query = 'hobbit'
     const page = '';
-    const search = 'all'
+    const searchCriteria = 'all'
 
 
-    const url =  `https://cors-anywhere.herokuapp.com/https://www.goodreads.com/search/index.xml?q=${query}&page${page}&key=${key}&search=${search}`
+    const url =  `https://cors-anywhere.herokuapp.com/https://www.goodreads.com/search/index.xml?q=${query}&page${page}&key=${key}&search=${searchCriteria}`
     // console.log(url);
 
     fetch(url)
@@ -39,9 +37,12 @@ class App extends Component {
           attributesKey: "attributes"
         });      
         
-        // book search queery location 
+        // book search querry location 
         const querryResult = json.GoodreadsResponse.search.results.work;
         // console.log(json.GoodreadsResponse.search.results.work)
+
+        
+        // add new book items to search state
         let searcharray= []
         const bookContents = (querryResult).map((item, index) => {
           // console.log(item)
@@ -51,7 +52,8 @@ class App extends Component {
         this.setState({
           search: searcharray
         })
-        console.log(this.state.search);
+        // check current state after adding books
+        // console.log(this.state.search);
       })
     })
 
@@ -60,23 +62,11 @@ class App extends Component {
     })
   }
 
-
-
-
-
-
   render() {
-    const bookRender = this.state.search.map((item, key) =>
-    // console.log(item)
-    <div className ='card'>
-      <h5>book cover</h5>
-      <h3 key={key}>{item}</h3>
-      <p>description</p>
-    </div>
-    )
-
+    
     return (
       <div className="App">
+
         <header>
           <nav>
             <collection>| Collections filter | </collection>
@@ -85,10 +75,11 @@ class App extends Component {
         </header>
 
         <body>
+
           <h2>body things to be here</h2>
+
           <ul>
-            {bookRender}
-            <BookCards/>
+            <BookCards search={this.state.search}/>
           </ul>
 
         </body>
@@ -98,8 +89,6 @@ class App extends Component {
           <h2>dis be footer</h2>
         </footer>
       </div>
-
-
     );
   }
 }
