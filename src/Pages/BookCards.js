@@ -10,8 +10,9 @@ class BookCards extends Component {
         }
     }
 
-    FaveClick = (e) => {        
-        console.log(`${this.item} was clicked`);
+    faveClick = (e) => {
+
+        console.log(`${this.props.item} was clicked`);
         
     }
     
@@ -20,10 +21,12 @@ class BookCards extends Component {
         // console.log(this.props.search);
         const bookRender = this.props.search.map((item, key) =>{
             return(
-                <div className ='card' onClick={this.FaveClick}>
+                <div className ='card'>
                     <h5>book cover</h5>
                     <h3 key={key}>{item}</h3>
                     <p>description</p>
+                    <i class="material-icons" onClick={this.faveClick}>favorite_border</i>
+
                 </div>
             )
         })   
