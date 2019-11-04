@@ -15,6 +15,7 @@ class App extends Component {
     }
   }
 
+
   
   componentDidMount() {
     const key = 'AiY0kCwWYFSK3RilpXntbQ';
@@ -63,7 +64,17 @@ class App extends Component {
     })
   }
 
+
+  onFavoriteClick = (e) => {
+    console.log(`adding ${this.props.book} to favorites`);
+    
+    
+  }
+
   render() {
+
+    
+
     
     return (
       <div className="App">
@@ -82,7 +93,9 @@ class App extends Component {
           <h2>body things to be here</h2>
 
           <ul>
-            <BookCards search={this.state.search} favorites ={this.state.favorites} />
+            <BookCards search={this.state.search} 
+            favorites ={this.state.favorites} 
+            favoriteClick = {this.onFavoriteClick}/>
           </ul>
 
         </body>

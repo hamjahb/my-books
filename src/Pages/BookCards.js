@@ -12,11 +12,11 @@ class BookCards extends Component {
 
     }
 
-    faveClick = (e) => {
-        console.log(`${this.props.search} was clicked`);
+    // faveClick = (e) => {
+    //     console.log(`${this.props.search} was clicked`);
         
         
-    }
+    // }
     
 
     render() {
@@ -25,7 +25,7 @@ class BookCards extends Component {
             // console.log(item);
             
             return(
-                <Card book={item}/>
+                <Card book={item} favoriteClick={this.props.favoriteClick}/>
             )
         })   
 
