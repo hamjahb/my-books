@@ -67,7 +67,11 @@ class App extends Component {
   render() {
     const bookRender = this.state.search.map((item, key) =>
     // console.log(item)
-    <li key={key}>{item}</li>
+    <div className ='card'>
+      <h5>book cover</h5>
+      <h3 key={key}>{item}</h3>
+      <p>description</p>
+    </div>
     )
 
     return (
@@ -88,9 +92,7 @@ class App extends Component {
         {/* </body> */}
       </div>
     );
-
   }
-
 }
 
 export default App;
