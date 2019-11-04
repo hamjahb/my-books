@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import parser from 'xml-js';
 import BookCards from './Pages/BookCards';
+import Favorites from './Pages/Favourites';
 
 class App extends Component {
   constructor(props) {
