@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import parser from 'xml-js';
 import BookCards from './Pages/BookCards';
-import Favorites from './Pages/Favourites';
+import Favorites from './Pages/Favorite';
 
 class App extends Component {
   constructor(props) {
@@ -72,6 +72,7 @@ class App extends Component {
           <nav>
             <collection>| Collections filter | </collection>
             <favorites>| Favorites filter | </favorites>
+            <Favorites/>
           </nav>
         </header>
 
