@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Card from './Card'
 
 
 class BookCards extends Component {
@@ -8,26 +9,23 @@ class BookCards extends Component {
         this.state = {
     
         }
+
     }
 
     faveClick = (e) => {
-
-        console.log(`${this.props.item} was clicked`);
+        console.log(`${this.props.search[0]} was clicked`);
+        
         
     }
     
 
     render() {
         // console.log(this.props.search);
-        const bookRender = this.props.search.map((item, key) =>{
+        const bookRender = this.props.search.map((item) =>{
+            // console.log(item);
+            
             return(
-                <div className ='card'>
-                    <h5>book cover</h5>
-                    <h3 key={key}>{item}</h3>
-                    <p>description</p>
-                    <i class="material-icons" onClick={this.faveClick}>favorite_border</i>
-
-                </div>
+                <Card book={item}/>
             )
         })   
 
