@@ -25,7 +25,9 @@ class BookCards extends Component {
             // console.log(item);
             
             return(
-                <Card book={item} favoriteClick={this.props.favoriteClick}/>
+                <Card book={item} 
+                favoriteClickCard = {this.props.favoriteClick}
+                />
             )
         })   
 

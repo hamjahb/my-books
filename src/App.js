@@ -64,15 +64,26 @@ class App extends Component {
     })
   }
 
+  
 
-  onFavoriteClick = (e) => {
-    console.log(`adding ${this.props.book} to favorites`);
+  favoriteClick =(book) => {
+        
+    console.log(`${book} add to favorites`);
+    const newFavorites = [...this.state.favorites ];
     
     
-  }
+    newFavorites.push(book)
+    
+    this.setState({
+        favorites : newFavorites
+    })
+
+
+}
 
   render() {
 
+    console.log(this.state.favorites);
     
 
     
@@ -93,9 +104,12 @@ class App extends Component {
           <h2>body things to be here</h2>
 
           <ul>
-            <BookCards search={this.state.search} 
-            favorites ={this.state.favorites} 
-            favoriteClick = {this.onFavoriteClick}/>
+            <BookCards 
+              search={this.state.search} 
+              favorites = {this.state.favorites}
+              favoriteClick = {this.favoriteClick}
+
+            />
           </ul>
 
         </body>
