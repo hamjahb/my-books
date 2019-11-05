@@ -3,7 +3,7 @@ import './App.css';
 import parser from 'xml-js';
 import BookCards from './Pages/BookCards';
 import Favorites from './Pages/Favorites';
-// import FavoriteBookCards from './Pages/FavoriteBookCards'
+
 
 class App extends Component {
   constructor(props) {
@@ -11,9 +11,11 @@ class App extends Component {
 
     this.state = {
       favorites: [],
-      collection: [],
+      value: '',
       search:[]
     }
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
 
@@ -93,20 +95,23 @@ class App extends Component {
   })
   }
 
+  handleChange(event) {
+    this.setState({value: event.target.value});
+    console.log(`value changed to ${this.state.value}`);
+    
+  }
+
+  handleSubmit(event) {
+    console.log('a book search was submitted ' + this.state.value);
+    event.preventDefault();
+  }
+
   render() {
 
     // console.log(this.state.favorites);
     
     return (
       <div className="App">
-
-        <header>
-          <nav>
-            <collection>| Collections filter | </collection>
-            {/* <favorites>| Favorites filter | </favorites> */}
-          
-          </nav>
-        </header>
 
         <body>
 
@@ -119,7 +124,14 @@ class App extends Component {
           </ul>
 
 
-          <h2>search</h2>
+          <h2>Search for books</h2>
+          <form onSubmit={this.handleSubmit}>
+            <input type="text"  onChange = {this.handleChange}>
+            </input>
+
+            <input type="submit" value="Search" />
+          </form>
+
           <ul>
             <BookCards 
               search={this.state.search} 
@@ -130,11 +142,6 @@ class App extends Component {
           </ul>
 
         </body>
-
-
-        <footer>
-          <h2>dis be footer</h2>
-        </footer>
       </div>
     );
   }

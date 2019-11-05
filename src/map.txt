@@ -10,3 +10,11 @@
         |
         |
     favorites
+        |
+        |
+        |
+FavoriteBookCards
+        |
+        |
+        |
+    Favorite cards
