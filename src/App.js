@@ -19,15 +19,43 @@ class App extends Component {
   }
 
 
-  
-  componentDidMount() {
+
+  favoriteClick =(book) => {
+        
+    // console.log(`${book} add to favorites`);
+    const newFavorites = [...this.state.favorites ];
+    const bookIndex = newFavorites.indexOf(book);
+
+    if (bookIndex === -1) {
+      // console.log(`Adding ${book} to favorites`);
+      newFavorites.push(book)
+    } else {
+
+      // console.log(`Removing ${book} from favorites`);
+      newFavorites.splice(bookIndex, 1);
+    }
+    
+    this.setState({
+        favorites : newFavorites
+    })
+}
+
+  removeAll = () => {
+    this.setState({
+      favorites : []
+  })
+  }
+
+  newSearch = (searchquerry) =>{
+    console.log(`starting new search for ${searchquerry}`);
+    
     const key = 'AiY0kCwWYFSK3RilpXntbQ';
-    const query = 'hobbit'
+    // const query = searcharray
     const page = '';
     const searchCriteria = 'all'
 
 
-    const url =  `https://cors-anywhere.herokuapp.com/https://www.goodreads.com/search/index.xml?q=${query}&page${page}&key=${key}&search=${searchCriteria}`
+    const url =  `https://cors-anywhere.herokuapp.com/https://www.goodreads.com/search/index.xml?q=${searchquerry}&page${page}&key=${key}&search=${searchCriteria}`
     // console.log(url);
 
     fetch(url)
@@ -67,43 +95,16 @@ class App extends Component {
     })
   }
 
-  
-
-  favoriteClick =(book) => {
-        
-    // console.log(`${book} add to favorites`);
-    const newFavorites = [...this.state.favorites ];
-    const bookIndex = newFavorites.indexOf(book);
-
-    if (bookIndex === -1) {
-      // console.log(`Adding ${book} to favorites`);
-      newFavorites.push(book)
-    } else {
-
-      // console.log(`Removing ${book} from favorites`);
-      newFavorites.splice(bookIndex, 1);
-    }
-    
-    this.setState({
-        favorites : newFavorites
-    })
-}
-
-  removeAll = () => {
-    this.setState({
-      favorites : []
-  })
-  }
-
   handleChange(event) {
     this.setState({value: event.target.value});
-    console.log(`value changed to ${this.state.value}`);
+    // console.log(`value changed to ${this.state.value}`);
     
   }
 
   handleSubmit(event) {
     console.log('a book search was submitted ' + this.state.value);
     event.preventDefault();
+    this.newSearch(this.state.value);
   }
 
   render() {
