@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import parser from 'xml-js';
 import BookCards from './Pages/BookCards';
-// import Favorites from './Pages/Favorites';
-import FavoriteBookCards from './Pages/FavoriteBookCards'
+import Favorites from './Pages/Favorites';
+// import FavoriteBookCards from './Pages/FavoriteBookCards'
 
 class App extends Component {
   constructor(props) {
@@ -109,7 +109,7 @@ class App extends Component {
           <h2>your favorites</h2>
 
           <ul>
-            <FavoriteBookCards favorites={this.state.favorites}
+            <Favorites favorites={this.state.favorites}
             favoriteClick = {this.favoriteClick}/>
           </ul>
 
