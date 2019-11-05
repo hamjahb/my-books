@@ -85,9 +85,13 @@ class App extends Component {
     this.setState({
         favorites : newFavorites
     })
-
-    
 }
+
+  removeAll = () => {
+    this.setState({
+      favorites : []
+  })
+  }
 
   render() {
 
@@ -110,7 +114,8 @@ class App extends Component {
 
           <ul>
             <Favorites favorites={this.state.favorites}
-            favoriteClick = {this.favoriteClick}/>
+            favoriteClick = {this.favoriteClick}
+            removeAll = {this.removeAll}/>
           </ul>
 
 
