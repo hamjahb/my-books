@@ -10,19 +10,12 @@ class BookCards extends Component {
     
         }
 
-    }
-
-    // faveClick = (e) => {
-    //     console.log(`${this.props.search} was clicked`);
-        
-        
-    // }
-    
+    }    
 
     render() {
         // console.log(this.props.search);
         const bookRender = this.props.search.map((item) =>{
-            // console.log(item);
+            // console.log(item.image_url._text);
             
             return(
                 <Card book={item} 

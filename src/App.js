@@ -78,8 +78,9 @@ class App extends Component {
         // add new book items to search state
         let searcharray= []
         const bookContents = (querryResult).map((item, index) => {
-          // console.log(item)
-          searcharray.push(item.best_book.title._text)
+          console.log(item)
+          // searcharray.push(item.best_book.title._text)
+          searcharray.push(item.best_book)
         })     
 
         this.setState({

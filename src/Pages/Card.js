@@ -21,8 +21,8 @@ class Card extends Component {
         
         return(
         <div className ='card'>
-            <h5>book cover</h5>
-            <h3>{this.props.book}</h3>
+            <img src={this.props.book.image_url._text}></img>
+            <h3>{this.props.book.title._text}</h3>
             <p>description</p>
             <i class="material-icons"  
             onClick={this.onClickFavorite} >favorite_border</i>

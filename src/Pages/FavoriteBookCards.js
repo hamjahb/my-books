@@ -12,6 +12,7 @@ class FavoriteBookCards extends Component {
 
     }    
 
+
     render() {
         // console.log(this.props.search);
         const bookRender = this.props.favorites.map((item) =>{
