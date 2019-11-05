@@ -10,7 +10,8 @@ class Card extends Component {
 
     onClickFavorite = (e) => {
         e.stopPropagation()
-        // console.log('on click work');
+        // console.log(` onclick ${this.props.book});
+        
         this.props.favoriteClickCard(this.props.book)
     }
     

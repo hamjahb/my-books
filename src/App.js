@@ -21,10 +21,12 @@ class App extends Component {
 
 
   favoriteClick =(book) => {
-        
-    // console.log(`${book} add to favorites`);
+    // keep getting object object but works on both favorite and unfavorite
+    console.log(`${book} add to favorites`);
     const newFavorites = [...this.state.favorites ];
     const bookIndex = newFavorites.indexOf(book);
+  
+    
 
     if (bookIndex === -1) {
       // console.log(`Adding ${book} to favorites`);
@@ -78,7 +80,7 @@ class App extends Component {
         // add new book items to search state
         let searcharray= []
         const bookContents = (querryResult).map((item, index) => {
-          console.log(item)
+          // console.log(item)
           // searcharray.push(item.best_book.title._text)
           searcharray.push(item.best_book)
         })     
