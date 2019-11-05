@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 
 
-class Card extends Component {
+class FavoriteCards extends Component {
     constructor(props){
         super(props)
         
@@ -31,4 +31,4 @@ class Card extends Component {
     }
 }
 
-export default Card;
+export default FavoriteCards;

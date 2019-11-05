@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import parser from 'xml-js';
 import BookCards from './Pages/BookCards';
-import Favorites from './Pages/Favorites';
+// import Favorites from './Pages/Favorites';
+import FavoriteBookCards from './Pages/FavoriteBookCards'
 
 class App extends Component {
   constructor(props) {
@@ -76,9 +77,9 @@ class App extends Component {
       // console.log(`Adding ${book} to favorites`);
       newFavorites.push(book)
     } else {
+
       // console.log(`Removing ${book} from favorites`);
       newFavorites.splice(bookIndex, 1);
-      
     }
     
     this.setState({
@@ -90,9 +91,7 @@ class App extends Component {
 
   render() {
 
-    console.log(this.state.favorites);
-    
-
+    // console.log(this.state.favorites);
     
     return (
       <div className="App">
@@ -101,15 +100,21 @@ class App extends Component {
           <nav>
             <collection>| Collections filter | </collection>
             {/* <favorites>| Favorites filter | </favorites> */}
-            <Favorites favorites={this.state.favorites}/>
-
+          
           </nav>
         </header>
 
         <body>
 
-          <h2>body things to be here</h2>
+          <h2>your favorites</h2>
 
+          <ul>
+            <FavoriteBookCards favorites={this.state.favorites}
+            favoriteClick = {this.favoriteClick}/>
+          </ul>
+
+
+          <h2>search</h2>
           <ul>
             <BookCards 
               search={this.state.search} 
