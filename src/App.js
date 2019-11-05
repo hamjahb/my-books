@@ -68,17 +68,24 @@ class App extends Component {
 
   favoriteClick =(book) => {
         
-    console.log(`${book} add to favorites`);
+    // console.log(`${book} add to favorites`);
     const newFavorites = [...this.state.favorites ];
-    
-    
-    newFavorites.push(book)
+    const bookIndex = newFavorites.indexOf(book);
+
+    if (bookIndex === -1) {
+      // console.log(`Adding ${book} to favorites`);
+      newFavorites.push(book)
+    } else {
+      // console.log(`Removing ${book} from favorites`);
+      newFavorites.splice(bookIndex, 1);
+      
+    }
     
     this.setState({
         favorites : newFavorites
     })
 
-
+    
 }
 
   render() {
