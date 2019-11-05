@@ -50,12 +50,12 @@ class App extends Component {
     console.log(`starting new search for ${searchquerry}`);
     
     const key = 'AiY0kCwWYFSK3RilpXntbQ';
-    // const query = searcharray
+    const query = searchquerry;
     const page = '';
     const searchCriteria = 'all'
 
-
-    const url =  `https://cors-anywhere.herokuapp.com/https://www.goodreads.com/search/index.xml?q=${searchquerry}&page${page}&key=${key}&search=${searchCriteria}`
+    
+    const url =  `https://cors-anywhere.herokuapp.com/https://www.goodreads.com/search/index.xml?q=${query}&page${page}&key=${key}&search=${searchCriteria}`
     // console.log(url);
 
     fetch(url)
