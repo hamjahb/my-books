@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background: #F4F1EA;
   
 }
 
@@ -36,7 +37,8 @@
   transition: 0.3s;
   border-radius: 10px 10px 10px 10px;
   max-width: 25vh;
-  margin: 10px;
+  margin: 15px;
+  background: whitesmoke;
 }
 
 /* On mouse-over, add a deeper shadow */
