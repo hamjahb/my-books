@@ -15,7 +15,7 @@ class Favorites extends Component {
         // console.log(this.props.favorites);
         
         return(
-            <div>
+            <div className='favoriteContainer'>
                 <div className='container'>
 
                 <FavoriteBookCards 

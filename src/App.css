@@ -2,6 +2,8 @@
   text-align: center;
   background: #F4F1EA;
   height: 100vh;
+  width: 100pv;
+  
 }
 
 .App-logo {
@@ -32,6 +34,7 @@
   border-radius: 10px 10px 10px 10px;
   min-width:25vh;
   max-width:25vh;
+  max-height: 35vh;
   margin: 10px;
   background: whitesmoke;
   
@@ -55,4 +58,8 @@ img {
 ::-webkit-scrollbar {
   width: 0px;  /* Remove scrollbar space */
   background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+.favoriteContainer{
+  margin: auto;
 }
