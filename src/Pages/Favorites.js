@@ -15,19 +15,22 @@ class Favorites extends Component {
         // console.log(this.props.favorites);
         
         return(
-            <div>
+            <div className='favoriteContainer'>
+                <div className='container'>
 
-        <FavoriteBookCards 
-            favorites={this.props.favorites}
-            favoriteClick = {this.props.favoriteClick}/>
+                <FavoriteBookCards 
+                    favorites={this.props.favorites}
+                    favoriteClick = {this.props.favoriteClick}/>
 
+                </div>
 
-        <button
-        onClick = {this.removeAllOnClick}>
-            Activate Lasers
-        </button>
-
-        </div>
+                <button
+                    onClick = {this.removeAllOnClick}>
+                    Activate Lasers
+                </button>
+                
+            </div>
+            
         )
 
         

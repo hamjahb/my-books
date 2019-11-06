@@ -121,7 +121,7 @@ class App extends Component {
 
           <h2>your favorites</h2>
 
-          <ul>
+          <ul className='container'>
             <Favorites favorites={this.state.favorites}
             favoriteClick = {this.favoriteClick}
             removeAll = {this.removeAll}/>
@@ -136,7 +136,7 @@ class App extends Component {
             <input type="submit" value="Search" />
           </form>
 
-          <ul>
+          <ul className='container'>
             <BookCards 
               search={this.state.search} 
               favorites = {this.state.favorites}
