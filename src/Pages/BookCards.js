@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Card from './Card'
+import BookCard from './Card'
 
 
 class BookCards extends Component {
@@ -18,7 +18,7 @@ class BookCards extends Component {
             // console.log(item.image_url._text);
             
             return(
-                <Card book={item} 
+                <BookCard book={item} 
                 favoriteClickCard = {this.props.favoriteClick}
                 />
             )

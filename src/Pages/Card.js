@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
+import { Card, Icon, Image } from 'semantic-ui-react'
 
 
 
-class Card extends Component {
+class BookCard extends Component {
     constructor(props){
         super(props)
         
@@ -21,15 +22,17 @@ class Card extends Component {
 
         
         return(
-        <div className ='card'>
-            <img src={this.props.book.image_url._text}></img>
-            <h3>{this.props.book.title._text}</h3>
+        <Card className ='card'>
+            <Image src={this.props.book.image_url._text}></Image>
+            <Card.Content>
+                <Card.header>{this.props.book.title._text}</Card.header>
             <p>description</p>
             <i class="material-icons"  
             onClick={this.onClickFavorite} >favorite_border</i>
-        </div>
+            </Card.Content>
+        </Card>
         )
     }
 }
 
-export default Card;
+export default BookCard;
