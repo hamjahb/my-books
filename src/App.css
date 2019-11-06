@@ -1,8 +1,7 @@
 .App {
   text-align: center;
   background: #F4F1EA;
-  
-  
+  height: 100vh;
 }
 
 .App-logo {
@@ -23,12 +22,6 @@
 .App-link {
   color: #09d3ac;
 }
-/* 
-.card{
-  border: 2px solid black;
-  margin: 2px;
-  max-width: 30vh;
-} */
 
 
 
@@ -39,7 +32,7 @@
   border-radius: 10px 10px 10px 10px;
   min-width:25vh;
   max-width:25vh;
-  margin: 15px;
+  margin: 10px;
   background: whitesmoke;
   
 }
@@ -51,7 +44,7 @@
 
 /* Add some padding inside the card container */
 .container {
-  padding: 2px 16px;
+  padding: 2px 10px;
   display:flex;
   overflow-x: scroll;
 }
