@@ -1,23 +1,24 @@
 # My book app
 
-## Descrition
+## Descrition:
 
 A React.js application that searches through GoodReads API and returns search results.
 
-users can add books to favorites.
+users can add books to favorites and remove books from favorites.
 
 
 
-## technologies used
+## technologies used:
 
 - React.js
 - java-script
+- css
 - axios
 - react-xml-parser
 
 
 
-## Future Plans
+## Future Implementation:
 
 - implement integration with good reads with oauth
 - Add descriptions to books.
