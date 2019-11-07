@@ -6,7 +6,9 @@ A React.js application that searches through GoodReads API and returns search re
 
 users can add books to favorites and remove books from favorites.
 
+## Deployment link:
 
+[see the app in action](https://hamjahb.github.io/my-books/)
 
 ## technologies used:
 
