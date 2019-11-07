@@ -3,15 +3,7 @@ import BookCard from './Card'
 
 
 class BookCards extends Component {
-    constructor(props){
-        super(props)
-
-        this.state = {
     
-        }
-
-    }    
-
     render() {
         // console.log(this.props.search);
         const bookRender = this.props.search.map((item) =>{
