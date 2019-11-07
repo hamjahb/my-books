@@ -29,3 +29,8 @@ users can add books to favorites and remove books from favorites.
 - ability to post book reviews to good reads.
 - rate books and post.
 - change button design and input box
+
+
+## known bugs
+
+- in deployment server app stops when a book is searched.
