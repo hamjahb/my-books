@@ -22,7 +22,7 @@ class App extends Component {
 
   favoriteClick =(book) => {
     // keep getting object object but works on both favorite and unfavorite
-    console.log(`${book} add to favorites`);
+    // console.log(`${book} add to favorites`);
     const newFavorites = [...this.state.favorites ];
     const bookIndex = newFavorites.indexOf(book);
   
