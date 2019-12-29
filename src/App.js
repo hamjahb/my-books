@@ -4,6 +4,8 @@ import parser from 'xml-js';
 import BookCards from './Pages/BookCards';
 import Favorites from './Pages/Favorites';
 
+// import fontawesome 
+import { FaGithub, FaLinkedin, FaEnvelope} from "react-icons/fa";
 
 class App extends Component {
   constructor(props) {
@@ -145,6 +147,12 @@ class App extends Component {
             />
           </ul>
 
+          <footer>
+            <p>created by Hisham Aljahbli</p>
+            <a href="https://www.linkedin.com/in/haljahbli-softwareeng" target= "blank"> <FaLinkedin/></a>
+            <a href="https://github.com/hamjahb" target= "blank"><FaGithub/></a>
+            <a href="mailto:h.aljahbli@gmail.com"><FaEnvelope/></a>
+          </footer>
         </body>
       </div>
     );
